@@ -4,38 +4,63 @@ const btn = document.querySelector('#salvar')
 
 btn.addEventListener('click', () => {
 
-    const perfil = getDadosForm()
+  const perfil = getDadosPerfil()
 
-    enviarDadosParaAPI(perfil)
+  enviarPerfilParaAPI(perfil)
+
+  console.log(perfil)
+
+  // const usuarioComum = getDadosUsuarioComum()
+
+  // enviarUsuarioComumParaAPI(usuarioComum)
 
 })
 
-function getDadosForm(){
-    const inputNickname = document.querySelector('#nickname')
-    const inputEmail = document.querySelector('#email')
-    const inputSenha = document.querySelector('#senha')
-    const perfil = {
-        nickname: inputNickname.value,
-        email: inputEmail.value,
-        senha: inputSenha.value
-    }
+function getDadosPerfil() {
+  const inputNickname = document.querySelector('#nickname')
+  const inputEmail = document.querySelector('#email')
+  const inputSenha = document.querySelector('#senha')
+  const inputNomeCompleto = document.querySelector('#nome')
+  const inputDataNasc = document.querySelector('#dataNasc')
+  const inputBiografia = document.querySelector('#biografia')
+  const perfil = {
+    nickname: inputNickname.value,
+    email: inputEmail.value,
+    senha: inputSenha.value,
+    nome: inputNomeCompleto.value,
+    dataNasc: inputDataNasc.value,
+    biografia: inputBiografia.value
+  }
 
-    return perfil
+  return perfil
 }
 
- async function enviarDadosParaAPI(perfil) {
-    try {
-        const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfil', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(perfil)
-        })
-        
-      } catch (erro) {
-        console.error(erro)
-      }
+function getDadosUsuarioComum() {
+  const inputNomeCompleto = document.querySelector('#nome')
+  const inputDataNasc = document.querySelector('#dataNasc')
+  const inputBiografia = document.querySelector('#biografia')
+  const usuarioComum = {
+    nome: inputNomeCompleto.value,
+    dataNasc: inputDataNasc.value,
+    biografia: inputBiografia.value
+  }
+
+  return usuarioComum
+}
+
+async function enviarPerfilParaAPI(perfil) {
+  try {
+    const resposta = await fetch('http://localhost:4000/perfil/cadastrarPerfilUsuarioComum', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(perfil)
+    })
+
+  } catch (erro) {
+    console.error(erro)
+  }
 
 }
