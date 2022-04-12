@@ -20,19 +20,19 @@ function getDadosEvento(){
     const inputDataTermino = document.querySelector('#dataTermino')
     const inputHoraInicio = document.querySelector('#horaInicio')
     const inputHoraTermino = document.querySelector('#horaTermino')
-    // const radioTaxa = document.querySelector('#radioTaxa')
+    const radioTaxa = document.querySelector('#radioTaxa')
 
-    // const selectFaixa = document.getElementById('faixaEtaria')
-    // const faixaSelecionada = selectFaixa.value
+    const selectFaixa = document.getElementById('faixaEtaria')
+    const faixaSelecionada = selectFaixa.value
 
-    // const selectTipo = document.querySelector('#tipoEvento')
-    // const tipoSelecionado = selectTipo.value
+    const selectTipo = document.querySelector('#tipoEvento')
+    const tipoSelecionado = selectTipo.value
 
-    // const selectCategoria = document.querySelector('#categoria')
-    // const categoriaSelecionada = selectCategoria.value
+    const selectCategoria = document.querySelector('#categoria')
+    const categoriaSelecionada = selectCategoria.value
 
-    // const selectContaEmpresa = document.querySelector('#contaEmpresa')
-    // const contaEmpresaSelecionada = selectContaEmpresa.value
+    const selectContaEmpresa = document.querySelector('#contaEmpresa')
+    const contaEmpresaSelecionada = selectContaEmpresa.value
 
     const evento = {
         titulo: inputTitulo.value,
@@ -54,7 +54,7 @@ function getDadosEvento(){
 
 async function enviarEventoParaAPI(evento) {
     try {
-      const resposta = await fetch(`http://localhost:4000/evento/cadastrarEvento/1`, {
+      const resposta = await fetch(`http://localhost:4000/evento/cadastrarEvento/1/${evento.tblFaixaEtariumIdFaixaEtaria}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
