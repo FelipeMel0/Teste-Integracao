@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar evento</title>
+</head>
+
+<body>
+    <h1>Criar publicação</h1>
+    <form action="http://localhost:4000/evento/cadastrarEvento/1">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" name="descricao" required>
+
+        <label for="capa">Capa</label>
+        <input type="text" id="capa" name="capa" required>
+
+        <label for="dataInicio">Data de início</label>
+        <input type="text" id="dataInicio" name="dataInicio" required>
+
+        <label for="dataFim">Data de término</label>
+        <input type="text" id="dataFim" name="dataFim">
+
+        <label for="horaInicio">Hora de início</label>
+        <input type="text" id="horaInicio" name="horaInicio" required>
+
+        <label for="horaFim">Hora de término</label>
+        <input type="text" id="horaFim" name="horaFim">
+
+        <br>
+        <br>
+
+        <label for="taxaAbsorvida">Absorver taxa?</label>
+        <div id="radioTaxa">
+            <div>
+                <input type="radio" id="opcaoSim" name="taxaAbsorvida" value="1" checked>
+                <label for="opcaoSim">Sim</label>
+            </div>
+            <div>
+                <input type="radio" id="opcaoNao" name="taxaAbsorvida" value="0" checked>
+                <label for="opcaoNao">Nao</label>
+            </div>
+        </div>
+        
+        <br>
+
+        <label for="faixaEtaria">Selecione a faixa etária</label>
+        <select name="faixaEtaria" id="faixaEtaria">
+            <option value="livre">Livre</option>
+            <option value="1">10 anos</option>
+            <option value="12">12 anos</option>
+            <option value="14">14 anos</option>
+            <option value="16">16 anos</option>
+            <option value="18">18 anos</option>
+        </select>
+
+        <label for="tipoEvento">Selecione o tipo de evento</label>
+        <select name="tipoEvento" id="tipoEvento">
+            <option value="2">Cultural</option>
+        </select>
+
+        <label for="categoria">Selecione a categoria</label>
+        <select name="categoria" id="categoria">
+            <option value="2">Show</option>
+        </select>
+
+        <label for="contaEmpresa">Selecione a conta para receber dinheiro</label>
+            <select name="contaEmpresa" id="contaEmpresa">
+                <option value="2">Feia</option>
+            </select>
+    
+
+        <button id="salvar">Salvar</button>
+    </form>
+</body>
+
+</html>
+
+<script src="criarEvento.js"></script>
