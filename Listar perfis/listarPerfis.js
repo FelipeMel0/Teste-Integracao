@@ -8,7 +8,9 @@ async function getContent(){
         const data = await response.json()
 
         console.log(data)
-        // document.getElementById('h1').innerHTML = data
+
+        mostrar(data)
+        // document.getElementById('perfil').innerHTML = data
 
     } catch (error) {
 
@@ -19,3 +21,15 @@ async function getContent(){
 }
 
 getContent()
+
+function mostrar(perfis){
+
+    let output = ''
+
+    for(let perfil of perfis){
+        output += `<h1>${perfil.nickname}</h1>`
+    }
+
+    document.querySelector('h1').innerHTML = output
+
+}
