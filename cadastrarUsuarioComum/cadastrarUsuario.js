@@ -10,10 +10,6 @@ btn.addEventListener('click', () => {
 
   console.log(perfil)
 
-  // const usuarioComum = getDadosUsuarioComum()
-
-  // enviarUsuarioComumParaAPI(usuarioComum)
-
 })
 
 function getDadosPerfil() {
@@ -33,19 +29,6 @@ function getDadosPerfil() {
   }
 
   return perfil
-}
-
-function getDadosUsuarioComum() {
-  const inputNomeCompleto = document.querySelector('#nome')
-  const inputDataNasc = document.querySelector('#dataNasc')
-  const inputBiografia = document.querySelector('#biografia')
-  const usuarioComum = {
-    nome: inputNomeCompleto.value,
-    dataNasc: inputDataNasc.value,
-    biografia: inputBiografia.value
-  }
-
-  return usuarioComum
 }
 
 async function enviarPerfilParaAPI(perfil) {
